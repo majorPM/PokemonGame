@@ -1,0 +1,226 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+  }
+
+  #header {
+    text-align: center;
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px;
+    margin-bottom: 70px;
+  }
+
+  #container {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;
+  }
+
+  #player1 {
+    width: 450px;
+    /* padding: 20px; */
+    /* padding-bottom: 0px; */
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  #card1 img {
+    width: 250px;
+    height: 250px;
+    /* padding-left: 60px; */
+  }
+  #img1 {
+    display: flex;
+    justify-content: center; /* horizontal center */
+    align-items: center;     /* vertical center */
+}
+
+  #player2 {
+    width: 400px;
+    /* padding: 20px; */
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  #card2 img {
+    width: 250px;
+    height: 250px;
+    padding-left: 60px;
+    /* object-fit: cover;
+    border-radius: 50%; */
+  }
+  #img2 {
+    display: flex;
+    justify-content: center; /* horizontal center */
+    align-items: center;     /* vertical center */
+}
+  #card_header{
+      background-color: #ff3b30;
+      padding: 8px;
+      margin-bottom: 10px;
+      border-radius: 0.5rem 0.5rem 0 0;
+  }
+  #abilities1 {
+    list-style: none;
+    padding: 20px;
+    background-color: #ff3b30;
+    margin-bottom: 0px;
+    border-radius: 0 0 0.5rem 0.5rem ;
+  }
+  #abilities1 li {
+    margin-left: 20px;
+    background-color: #ff3b30;
+    padding-left: 5px;
+  }
+  #abilities2 {
+    list-style: none;
+    padding: 20px;
+    background-color: #ff3b30;
+    margin-bottom: 0px;
+    border-radius: 0 0 0.5rem 0.5rem ;
+  }
+  #abilities2 li {
+    margin-left: 20px;
+    background-color: #ff3b30;
+    padding-left: 5px;
+  }
+  #p1_score {
+    float: right;
+  }
+  #p2_score {
+    float: right;
+  }
+  #experience1{
+      float: right;
+  padding-right: 40px;    
+  font-size: larger;
+  font-style: italic;
+}
+#experience2{
+      float: right;
+  padding-right: 40px;    
+  font-size: larger;
+  font-style: italic;
+}
+  #name1{
+      margin-top: 30px;
+      padding-left: 20px;
+      /* font-weight:300; */
+      font-size: larger;
+      font-style: italic;
+  }
+  #name2{
+      margin-top: 30px;
+      padding-left: 20px;
+      /* font-weight:300; */
+      font-size: larger;
+      font-style: italic;
+  }
+  /* #fight{
+      position: relative;
+      left: 50%;
+      width: 4rem;
+      height: 4rem;
+      font-size: larger;
+      background-color: rgb(252, 0, 0);
+      border-radius: 5rem;
+      border: none;
+      cursor: pointer;
+  } */
+  #fight {
+    position: relative;
+    left: 50%;
+    width: 5rem;
+    height: 5rem;
+    border: 2px solid #222;
+    border-radius: 5rem;
+    background: linear-gradient(
+        to bottom,
+        #ff3b30 0%,
+        #ff3b30 50%,
+        #ffffff 50%,
+        #ffffff 100%
+    );
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.2s ease;
+}
+
+#fight::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #222;
+    transform: translateY(-50%);
+}
+
+#fight::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 22px;
+    height: 22px;
+    background: white;
+    border: 3px solid #222;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#fight:hover {
+    transform: scale(1.05);
+}
+
+#fight:active {
+    transform: scale(0.95);
+}
+/* --------- */
+#fight.lightning {
+    animation: lightning 0.4s ease-in-out;
+}
+
+@keyframes lightning {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 rgb(255, 149, 0);
+    }
+
+    20% {
+        transform: translateX(-5px);
+        box-shadow:
+            0 0 20px rgb(255, 255, 255),
+            0 0 40px rgba(255, 242, 3, 0.84),
+            0 0 60px rgb(0, 37, 173);
+    }
+
+    40% {
+        transform: translateX(5px);
+    }
+
+    60% {
+        transform: translateX(-5px);
+        box-shadow:
+            0 0 20px rgb(150, 181, 248),
+            0 0 40px rgb(0, 21, 255),
+            0 0 60px rgb(0, 37, 173);
+    }
+
+    80% {
+        transform: translateX(5px);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: none;
+    }
+}
